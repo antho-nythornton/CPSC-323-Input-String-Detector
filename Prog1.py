@@ -20,12 +20,15 @@ def parser(input_string):
         elif top in parsing_table and input in parsing_table[top]:
             output = parsing_table[top][input]
         else:
-            return False
+            return "String is not accepted/Invalid."
         stack.pop()
         stack.extend(reversed(output))
 
     
-    return True
+    if not stack and input_index == len(input_string):
+        return "String is accepted/valid."
+    else:
+        return "String is not accepted/Invalid."
 
 
 parsing_table = {
