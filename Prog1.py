@@ -41,9 +41,11 @@ parsing_table = {
 
 # Test input strings
 input_strings = [
-    "(a+a)$",
-    "(a+a)e$",
+    "(a+a)*a$",
+    "a*(a+a)$",
+    "a(a+a)$"
 ]
 
 print("Test 01:",input_strings[0], parser(input_strings[0]))
 print("Test 02:",input_strings[1], parser(input_strings[1]))
+print("Test 03:",input_strings[2], parser(input_strings[2]))
